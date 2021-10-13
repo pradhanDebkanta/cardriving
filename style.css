@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.score-container {
+    height: auto;
+    /* width: 100%; */
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F2F4C3;
+    font-size: 1.2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+
+.score {
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: #C490E4;
+}
+.highest-score{
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    color: #77D970;
+    font-family: monospace;
+}
+.h-score{
+    color: #A239EA;
+}
+
+.startScreen {
+    height: auto;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(131, 17, 224);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: #efefef;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.startScreen:hover {
+    background-color: transparent;
+    border: 2px solid rgb(142, 43, 235);
+    color: rgb(131, 17, 224);
+    transition: all 0.3s ease;
+}
+
+.gameArea {
+    position: relative;
+    width: 360px;
+    position: relative;
+    margin: auto;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.car, .enemy {
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.car {
+    top: calc(80% - 50px);
+    left: calc(50% - 25px);
+    background-image: url(./car.png);
+}
+
+.enemy {
+    background-image: url(./enemyCar.png);
+}
+
+.car-name, .enemy-car-name {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.enemy-car-name {
+    top: 44%;
+}
+
+.sticker {
+    position: absolute;
+    left: calc(50% - 4px);
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 6px;
+    background-color: transparent;
+}
+
+.streep1, .streep2 {
+    height: 27px;
+    width: 6px;
+    background-color: #fff;
+}
+
+.streep2 {
+    margin-top: 10px;
+    margin-bottom: 9px;
+}
+
+.game-over-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-body {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    height: auto;
+    width: 40%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    background-color: #efefef;
+    border: 1px solid #777;
+    border-radius: 8px;
+}
+
+.modal-heading {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+    font-weight: bold;
+    color: #47597E;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.modal-btn {
+    padding: 5px 16px;
+    margin: auto 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.replay-btn {
+    border: 2px solid #77D970;
+    color: #77D970;
+}
+
+.replay-btn:hover {
+    border: 2px solid transparent;
+    color: #fff;
+    background-color: #77D970;
+    transition: all 0.3s ease;
+}
+.cancle-btn{
+    border: 2px solid #FF5C58;
+    color: #FF5C58;
+}
+.cancle-btn:hover{
+    border: 2px solid transparent;
+    color: #efefef;
+    background-color: #FF5C58;
+    transition: all 0.3s ease;
+}
+
+.audio-holder{
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    border-radius: 100%;
+    z-index: 999;
+    background-color: transparent;
+    cursor: pointer; 
+}
+.audio-img,
+.horn-img{
+    font-size: 1.1rem;
+    color: #77D970;
+}
+.horn-holder{
+    position: absolute;
+    bottom: 3%;
+    left: 60%;
+    border-radius: 100%;
+    z-index: 999;
+    background-color: transparent;
+    cursor: pointer; 
+}
+.hide {
+    display: none;
+}
+
+@media (max-width: 768.98px){
+    .modal-body{
+        width: 60%;
+    }
+}
+@media (max-width: 479.98px){
+    .modal-body{
+        width: 80%;
+    }
+}
