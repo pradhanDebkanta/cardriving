@@ -325,6 +325,7 @@ body {
         height: 160px;
         width: 160px;
         left: 50%;
+        bottom: 6rem;
         padding: 28px;
         border: none;
     }
