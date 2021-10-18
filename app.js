@@ -119,6 +119,80 @@ function onReleaseKey(e) {
     }
 };
 
+function carControl() {
+    let dirControlBox = document.createElement('div');
+    let upArr = document.createElement('div');
+    let rightArr = document.createElement('div');
+    let downArr = document.createElement('div');
+    let leftArr = document.createElement('div');
+    upArr.innerHTML = `<i class="fas fa-chevron-up c_arrow1"></i>`;
+    rightArr.innerHTML = `<i class="fas fa-chevron-right c_arrow2"></i>`;
+    downArr.innerHTML = `<i class="fas fa-chevron-down c_arrow3"></i>`;
+    leftArr.innerHTML = `<i class="fas fa-chevron-left c_arrow4"></i>`;
+
+    dirControlBox.setAttribute('class', 'dir-control-box');
+    upArr.setAttribute('class', 'up_arrow_box');
+    rightArr.setAttribute('class', 'right_arrow_box');
+    downArr.setAttribute('class', 'down_arrow_box');
+    leftArr.setAttribute('class', 'left_arrow_box');
+    dirControlBox.appendChild(upArr);
+    dirControlBox.appendChild(leftArr);
+    dirControlBox.appendChild(rightArr);
+    dirControlBox.appendChild(downArr);
+    gameContainer.appendChild(dirControlBox);
+
+    // up arrow event 
+    upArr.addEventListener('mousedown', () => {
+        // console.log('up mouse down');
+        keys.ArrowUp = true;
+        upArr.classList.add('border_class');
+    });
+    upArr.addEventListener('mouseup', () => {
+        // console.log('up mouse up');
+        keys.ArrowUp = false;
+        upArr.classList.remove('border_class');
+    });
+
+    // right arrow event 
+    rightArr.addEventListener('mousedown', () => {
+        // console.log('right mouse down');
+        keys.ArrowRight = true;
+        rightArr.classList.add('border_class');
+    });
+    rightArr.addEventListener('mouseup', () => {
+        // console.log('right mouse up');
+        keys.ArrowRight = false;
+        rightArr.classList.remove('border_class');
+    });
+
+    // down arrow event 
+    downArr.addEventListener('mousedown', () => {
+        // console.log('down mouse down');
+        keys.ArrowDown = true;
+        downArr.classList.add('border_class');
+
+    });
+    downArr.addEventListener('mouseup', () => {
+        // console.log('down mouse up');
+        keys.ArrowDown = false;
+        downArr.classList.remove('border_class');
+    });
+
+    // left arrow event
+    leftArr.addEventListener('mousedown', () => {
+        // console.log('left mouse down');
+        keys.ArrowLeft = true;
+        leftArr.classList.add('border_class');
+
+    });
+    leftArr.addEventListener('mouseup', () => {
+        // console.log('left mouse up');
+        keys.ArrowLeft = false;
+        leftArr.classList.remove('border_class');
+    });
+
+}
+
 function roadStickers() {
     for (let i = 0; i < 9; i++) {
         let sticker = document.createElement('div');
@@ -297,7 +371,8 @@ function hornOn() {
 function hornOff() {
     if (isStart && !audioKey.m) {
         horn.pause();
-    }}
+    }
+}
 
 function start() {
     isStart = true;
@@ -353,6 +428,7 @@ function start() {
     audioBox.addEventListener('click', audioControl);
     audioBox.appendChild(audioIcon);
     gameContainer.appendChild(audioBox);
+    carControl();
 
     bgMusic()
     window.requestAnimationFrame(carMove)
