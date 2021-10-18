@@ -142,54 +142,54 @@ function carControl() {
     gameContainer.appendChild(dirControlBox);
 
     // up arrow event 
-    upArr.addEventListener('mousedown', () => {
+    upArr.addEventListener('pointerdown', () => {
         // console.log('up mouse down');
         keys.ArrowUp = true;
         upArr.classList.add('border_class');
-    });
-    upArr.addEventListener('mouseup', () => {
+    }, false);
+    upArr.addEventListener('pointerup', () => {
         // console.log('up mouse up');
         keys.ArrowUp = false;
         upArr.classList.remove('border_class');
-    });
+    }, false);
 
     // right arrow event 
-    rightArr.addEventListener('mousedown', () => {
+    rightArr.addEventListener('pointerdown', () => {
         // console.log('right mouse down');
         keys.ArrowRight = true;
         rightArr.classList.add('border_class');
-    });
-    rightArr.addEventListener('mouseup', () => {
+    }, false);
+    rightArr.addEventListener('pointerup', () => {
         // console.log('right mouse up');
         keys.ArrowRight = false;
         rightArr.classList.remove('border_class');
-    });
+    }, false);
 
     // down arrow event 
-    downArr.addEventListener('mousedown', () => {
+    downArr.addEventListener('pointerdown', () => {
         // console.log('down mouse down');
         keys.ArrowDown = true;
         downArr.classList.add('border_class');
 
-    });
-    downArr.addEventListener('mouseup', () => {
+    }, false);
+    downArr.addEventListener('pointerup', () => {
         // console.log('down mouse up');
         keys.ArrowDown = false;
         downArr.classList.remove('border_class');
-    });
+    }, false);
 
     // left arrow event
-    leftArr.addEventListener('mousedown', () => {
+    leftArr.addEventListener('pointerdown', () => {
         // console.log('left mouse down');
         keys.ArrowLeft = true;
         leftArr.classList.add('border_class');
 
-    });
-    leftArr.addEventListener('mouseup', () => {
+    }, false);
+    leftArr.addEventListener('pointerup', () => {
         // console.log('left mouse up');
         keys.ArrowLeft = false;
         leftArr.classList.remove('border_class');
-    });
+    }, false);
 
 }
 
